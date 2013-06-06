@@ -1,0 +1,16 @@
+<h2>Liste des formations :</h2>
+<?php if(isset($this->message)) : ?>
+<p><?php echo $this->message; ?></p>
+<?php endif; ?>
+<p><a href="<?php echo $this->url(array("action" => "ajouter"), "default"); ?>">Ajouter une formation</a></p>
+<table>
+    <?php foreach($this->formations as $f) : ?>
+    <?php /* @var $f Application_Model_Formation */ ?>
+    <tr>
+        <td><?php echo $f->getNom(); ?></td>
+        <td><a href="<?php echo $this->url(array("action" => "details", "id" => $f->getId()), "default"); ?>">Détails</a></td>
+        <td><a href="<?php echo $this->url(array("action" => "modifier", "id" => $f->getId()), "default"); ?>">Modifier</a></td>
+        <td><a href="<?php echo $this->url(array("action" => "supprimer", "id" => $f->getId()), "default"); ?>">Supprimer</a></td>
+    </tr>
+    <?php endforeach; ?>
+</table>

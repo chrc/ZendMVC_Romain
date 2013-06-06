@@ -1,0 +1,9 @@
+<p>Heure : <?php echo $this->heure; ?></p>
+<div>
+    Une liste aléatoires :
+    <ul>
+        <?php foreach($this->nbAleas as $alea) : ?>
+        <li><?php echo $this->nombre($alea); ?></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
